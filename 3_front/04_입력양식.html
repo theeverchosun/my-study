@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식</title>
+</head>
+<body>
+<h2>입력양식태그</h2>
+<h3>input태그</h3>
+
+<p> 
+    사용자에게 값을 입력받을수 있는 텍스트상자
+</p>
+아이디 : <input type="text"> <br>
+비밀번호 : <input type="password"> <br>
+성별 : <input type="radio" name="gender"> 남자
+<input type="radio" name="gender"> 여자 <br>
+<input type="submit" value="회원가입">
+
+<hr>
+<h2> 폼(form) 태그</h2>
+<p>
+    폼 태그 내에 submit 버튼 클릭 시
+    해당 폼  태그 내에 작성된 <br>
+    사용자가  입력된 값들을 서버로 전달하여 요청을 수행
+
+
+</p>
+<h4> 속성</h4>
+<ul>
+    <li>action : 요청할 서버 주소(경로)</li>
+    <li>method: 요청 전송 방식</li>
+    <ul>
+        <li>get 방식 : 요청시 사용자가 입력한 값들이 url에 노출되는 방식</li>
+        <li>post 바익 : 요청시 사용자가 입력한 값들이 url에 노출되지 않는 방식</li>
+
+    </ul>
+
+</ul>
+<form action="서치" method="get">
+    검색어: <input type="text" name="keyoword">
+    <input type ="submit" value="검색"> <br>
+
+
+</form>
+    
+<h2> 유투브 검색</h2>
+    <form action="https://www.youtube.com/results" method="get">
+ 검색어: <input type="text" name="search_query">
+    <input type ="submit"  style="background-color: crimson;"   value="검색">
+
+    </form>
+<form action="https://search.naver.com/search.naver" method="get">
+<h3> 네이버 검색 </h3>
+ 검색어: <input type="text" name="query">
+    <input type ="submit"   style="background-color: forestgreen;"  value="검색"> <br>
+
+
+</form>
+
+<h3> post 방식 테스트</h3>
+<form action="login" method="post">
+<label>
+    아이디: 
+    <input type="text" name="userId" placeholder="아이디 입력"> 
+</label> <br>
+<label>
+
+    비밀번호: 
+    <input type="password" name="password" placeholder="비밀번호 입력">
+
+</label><br>
+<input type="submit" value="로그인">
+
+
+</form>
+<hr>
+<h2>그외의 입력 태그들</h2>
+<p>성별</p>
+<form action="test" method="post">
+<!--radio 동일한 name속성을 가진 항목중 단 한가지만 선택하도록 강제함-->
+<label>
+<input type="radio" name="gender" value="남자"> 남자
+</label>
+<label>
+<input type="radio" name="gender" value="여자"> 여자
+</label>
+
+<p>나이대</p>
+<label>
+<input type="radio" name="age" value="20" checked> 20대
+</label>
+<label>
+<input type="radio" name="age" value="30"> 30대
+</label>
+<label>
+<input type="radio" name="age" value="40"> 40대
+</label>
+<!--check box : 동일한 name 속성을 가지고 여러개 선택할수있도록 하는 태그-->
+<p>취미 (중복가능)</p>
+<label>
+    <input type="checkbox" name="hobby" value="쇠질">
+</label>
+<label>
+    <input type="checkbox" name="hobby" value="게임">
+</label>
+<label>
+    <input type="checkbox" name="hobby" value="등산">
+</label>
+<label>
+    <input type="checkbox" name="hobby" value="축구">
+</label>
+
+<p> 시험점수</p>
+<input type="number" name="score" min="0" max="100" step="5">
+<p>날짜</p>
+<input type="date" name="birth">
+<input type="datetime-local" name="birth">
+
+<!--textarea-->
+
+
+<p>주말 계획</p>
+<textarea name="plan" rows="15" style="resize: none;"> 전달될 내용</textarea>
+
+
+
+<br><br>
+<input type="submit" value="로그인">
+
+
+</form>
+
+
+
+
+
+
+</body>
+</html>

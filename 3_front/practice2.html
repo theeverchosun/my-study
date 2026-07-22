@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+
+<body>
+
+<!--
+    =============================================
+    [ HTML 종합 실습 ] 나의 프로필 + 회원가입 페이지
+    =============================================
+
+        목표: 배운 HTML 태그를 모두 활용해서
+        프로필 소개 + 회원가입 페이지를 완성하세요.
+        
+        힌트: 각 문제마다 사용할 태그가 주석으로 안내되어 있어요.
+    =============================================
+-->
+
+
+<!-- ==========================================
+    [ 문제 1 ] 페이지 제목
+    ==========================================
+    h1 태그로 "나의 프로필" 이라고 제목을 작성하세요.
+    h3 태그로 "안녕하세요! 저를 소개합니다 :)" 라고 부제목을 작성하세요.
+    =========================================== -->
+
+    <!-- 여기에 코드를 작성하세요 -->
+
+
+    <h1> 나의 프로필</h1>
+
+    <h3> 안녕하세요 !</h3>
+
+
+    <hr>
+<!-- ==========================================
+    [ 문제 2 ] 프로필 이미지 + 링크
+    ==========================================
+    아래 조건에 맞게 작성하세요.
+
+    조건 1: 아무 이미지나 img태그로 삽입하세요.
+        - src는 ./public/image.png 로 설정
+        - alt는 "프로필 이미지" 로 설정
+        - width는 150으로 설정
+
+    조건 2: 위 이미지를 클릭하면 새 탭에서 "본인의 깃허브 주소" 로 이동하도록
+            a태그로 감싸세요.
+            예) https://github.com/sjlimiei26
+    =========================================== -->
+
+    <!-- 여기에 코드를 작성하세요 -->
+
+<a href="https://github.com/theeverchosun"  target="_blank"><img src="./public/ilonaburschl-field-3123271_1920.jpg" alt="프로필 이미지" width="150"></a>
+
+
+
+    <hr>
+<!-- ==========================================
+    [ 문제 3 ] 자기소개 단락
+    ==========================================
+    p 태그를 이용해 자기소개를 작성하세요.
+
+    조건 1: p태그 안에서 br 태그로 줄바꿈을 2번 이상 사용하세요.
+    조건 2: &nbsp; 를 사용해서 들여쓰기를 표현하세요.
+    조건 3: strong 태그로 이름을 강조하세요.
+    조건 4: mark 태그로 좋아하는 것을 강조하세요.
+    조건 5: del 태그로 재미있는 취소선 텍스트를 하나 추가하세요. (예: "저는 게으릅니다")
+
+    예시 결과:
+        안녕하세요! 저는 [이름]입니다.
+        [무언가]를 좋아합니다.
+        저는 게으릅니다 <- 취소선
+    =========================================== -->
+
+    <!-- 여기에 코드를 작성하세요 -->
+     <p>
+        안녕하세요!&nbsp;저는&nbsp;<strong>박기태</strong>입니다.
+        <mark>낮잠</mark>을&nbsp;좋아합니다.
+        <del>저는&nbsp;게으릅니다.</del>
+
+
+
+
+     </p>
+
+
+    <hr>
+<!-- ==========================================
+    [ 문제 4 ] 기술 스택 목록
+    ==========================================
+    조건 1: ul 태그로 "내가 배운 것들" 목록을 작성하세요.
+            항목은 3개 이상으로 자유롭게 작성 (예: HTML, CSS, JavaScript 등)
+
+    조건 2: ol 태그(type="1")로 "앞으로 배우고 싶은 것" 목록을 작성하세요.
+            항목은 3개 이상
+    =========================================== -->
+
+    <h2>기술 스택</h2>
+     <ul>
+        <li>Java</li>
+        <li>Oracle</li>
+        <li>Html</li>
+
+     </ul>
+     <h2>앞으로 배우고 싶은 것</h2>
+     <ol type="1">
+        <li>파이선</li>
+        <li>CSS</li> 
+        <li>자바스크립트</li>
+
+
+     </ol>
+
+
+    <hr>
+<!-- ==========================================
+    [ 문제 5 ] 이력서 테이블
+    ==========================================
+    아래 구조를 보고 table 태그로 표를 완성하세요.
+    - border="1" 속성을 table에 추가하세요.
+    - thead, tbody, tfoot 을 사용해 구조화하세요.
+
+    표 구조:
+    +----------+----------+----------+
+    | 구분      | 기간      | 내용      |  <- thead (th 사용)
+    +----------+----------+----------+
+    | 학력      | 2020~2024| XX대학교  |  <- tbody
+    +----------+----------+----------+
+    | 경력      | 2024~현재 | XX회사   |  <- tbody
+    +----------+----------+----------+
+    | 합계 (colspan=3으로 3칸 병합)   |  <- tfoot
+    +----------+----------+----------+
+
+    추가 조건: tfoot의 셀은 colspan="3" 으로 합쳐서
+              "총 경력: 1년" 이라고 적으세요.
+    =========================================== -->
+    
+
+    <h2>이력서</h2>
+    <!-- 여기에 코드를 작성하세요 -->
+ <table border="1">
+        <thead>
+            <td>구분</td>
+            <td>기간</td>
+            <td>내용</td>
+
+        </thead>
+        <tbody>
+            <td>학력</td>
+            <td>2009~2014</td>
+            <td>인천대학교</td>
+
+
+        </tbody>
+        <tbody>
+            <td>경력</td>
+            <td>2022~2024</td>
+            <td>토수</td>
+
+        </tbody>
+        <tfoot>
+            <td colspan="3">총경력 : 1년</td>
+          
+        </tfoot>
+
+    </table>
+
+    <hr>
+
+
+<!-- ==========================================
+    [ 문제 6 ] 영상 또는 지도 삽입 (iframe)
+    ==========================================
+    조건: iframe 태그를 사용해서 아무 유튜브 영상의 퍼가기 코드를 붙여넣으세요.
+         (유튜브 영상 -> 공유 -> 퍼가기 코드 복사)
+         width="560", height="315" 로 설정하세요.
+
+    * 유튜브 퍼가기 코드가 없으면 아래 src를 그대로 사용해도 됩니다.
+      src="https://www.youtube.com/embed/uPH3FNrF-D0?si=GLZh6dBkhaD4S7Oi"
+
+    * VSCode 내 라이브 서버로 열어야 확인이 됩니다. *
+    * 일부 동영상은 보안/정책 상 연결되지 않을 수 있습니다. *
+    =========================================== -->
+
+        <h2>내가 좋아하는 영상</h2>
+        <iframe  "width="560" height="315" src="https://www.youtube.com/embed/pMA3x-bc8iM?si=4fxfUEO-xBoiXFHN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
+
+
+        <hr>
+        
+<!-- ==========================================
+    [ 문제 7 ] div / span 영역 나누기
+    ==========================================
+    아래 조건대로 작성하세요.
+
+    조건 1: div 태그 3개를 만들고 각각 배경색을 다르게 지정하세요.
+            style="background: 색상이름;" 속성 사용
+            내용은 자유롭게 작성
+
+    조건 2: span 태그 3개를 만들고 각각 배경색을 다르게 지정하세요.
+            (div와 span이 어떻게 다르게 표시되는지 확인하세요!)
+    =========================================== -->
+
+        <h2>div vs span</h2>
+       <div style="color: violet;"> 크리스피 베이컨 맛있겠다
+        <ul>
+            <li>돼지</li>
+            <li>다리 없다</li>
+        </ul>
+
+
+       </div>
+       <div>
+        하지만 지금은 없다
+       </div>
+       <br>
+       <span>
+        <strong> 안녕하세요 </strong> 
+        <em> 여기까지 왔네요</em>
+
+       </span>
+       <span>
+         감사합니다
+       </span>
+        
+
+
+        <hr>
+
+
+<!-- ==========================================
+    [ 문제 8 ] 회원가입 폼 완성하기
+    ==========================================
+    아래 조건에 맞는 회원가입 form을 만드세요.
+
+    form 조건:
+    - action="/signup", method="post"
+
+    입력 항목 (모두 label로 감싸거나 label과 연결):
+    1. 아이디     : type="text",     name="username",  required, placeholder="아이디 입력"
+    2. 비밀번호   : type="password", name="password",  required, placeholder="비밀번호 입력"
+    3. 이메일     : type="email",    name="email",     placeholder="이메일 입력"
+    4. 생년월일   : type="date",     name="birth"
+    5. 성별 (radio): name="gender", 남자/여자 2가지, 남자를 기본 checked
+    6. 관심분야 (checkbox): name="interest", 3가지 이상 자유롭게 (예: 프로그래밍, 디자인, 게임)
+    7. 자기소개   : textarea, name="intro", rows="4", cols="40", placeholder="자기소개를 입력하세요"
+    8. 언어 선택  : select, name="language", 옵션 3가지 (한국어/영어/일본어)
+    9. 제출 버튼  : type="submit", 텍스트는 "가입하기"
+    10. 초기화 버튼: type="reset",  텍스트는 "다시 입력"
+
+    각 항목 사이에 br 태그로 줄바꿈 해주세요.
+    =========================================== -->
+
+        <h2>회원가입</h2> 
+       <form action="/signup" method="post">
+        <label>
+            <ol type="1">
+            <li>아이디 : <input type="text" name="username"  placeholder="아이디 입력" required> <br></li>
+            <li>비밀번호: <input type="password" name="password" required placeholder="비밀번호 입력"> <br></li>
+            <li>이메일 : <input type="email" name="email"  placeholder="이메일 입력"> <br></li>
+            <li>생년월일 : <input type="date" name="birth"> <br></li>
+                <li>성별:<input type="radio" name="gender" value = 남자 checked > 남자
+                <input type="radio" name="gender" value = 여자  checked > 여자 </li>
+                <li>
+                    <input type="checkbox" name="interest" value = 게임 > 게임 
+                    <input type="checkbox" name="interest" value = 프로그래밍 > 프로그래밍
+
+                     
+
+
+                </li>
+                <label>
+                    <li>자기소개:</li>
+
+                    <textarea name="intro" rows="4" cols="40" placeholder="자기소개를 입력하세요"></textarea>
+
+                </label>
+
+                <li><select name="language" >
+                    <option>한국어</option>
+                    <option>일본어</option>
+                    <option>영어</option>
+                </select>
+                </li> <br><br>
+                
+                    <!-- <li>
+                    <input type="submit" value="가입하기">
+
+                </li> -->
+                <button>가입하기</button>
+                <button type="button">일반버튼</button>
+                
+            </ol>
+        </label>
+        
+
+
+
+
+
+
+       </form>
+        
+        <hr>
+
+</body>
+
+</html>

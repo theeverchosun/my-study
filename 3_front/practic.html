@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <tilte>복습 | 처음 만난 태그들</tilte>
+</head>
+<body>
+    <!-- 웹 페이지의 머리말 역할을 하는 시맨틱 영역 -->
+    <header>
+        <h1>제목 태그: 가장 큰 크기이며, 중요도가 높음!</h1>
+
+        <p>
+            시맨틱 태그는 의미를 가지고 있는 태그로,
+            화면에 직접적인 디자인 효과는 없지만 컴퓨터가 웹 페이지  영역을 쉽게 구분하기 위한 용도로 사용됨.
+        </p>
+    </header>
+
+    <hr>
+
+    <!--웹 페이지의 핵심 본문 콘텐츠가 들어가는 시맨틱 영역 _ --> 
+    <main>
+
+        <!-- 독립적인 구역을 나타내는 영역 -->
+        <section>
+            <h2>서식 태그들</h2>
+
+            <ul>
+                <li>b, strong : <strong>굵게</strong> 표시</li>
+                <li>i, em : <em>기울임</em> 표시</li>
+                <li>u : <u>밑줄</u> 표시</li>
+                <li>s : <s>취소선</s> 표시</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>영역을 구성하는 요소 종류</h2>
+
+            <div>
+                <li>block : 블록 요소. 가로줄 전체를 차지하며, 자동으로 줄바꿈이 일어남
+                    <ul>
+                        <li>div</li>
+                        <li>p</li>
+                        <li>h1 ~ h6, ...</li>
+                    </ul>
+                </li>
+                <li>inline : 인라인 요소. 안에 들어있는 콘텐츠(내용) 크기만큼만 공간을 차지하며 옆으로 나열됨
+                    <ul>
+                        <li>span</li>
+                        <li>a, img</li>
+                        <li>b, i, ...</li>
+                    </ul>
+                </li>
+            </div>
+        </section>
+
+        <section>
+            <h2>표 형식의 태그</h2>
+
+            <table border="1">
+                <tr>
+                    <th colspan ="2" rowspan="3">
+                        태그 종류
+                    </th>
+                    <td>table</td>
+                    <td>하나의 표(테이블)를 표현함</td>
+                </tr>
+                <tr>
+                    <td>tr</td>
+                    <td>하나의 행(가로줄)을 표현함</td>
+                </tr>
+                <tr>
+                    <td>td, th</td>
+                    <td>하나의 칸(셀)을 표현함</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- 웹 페이지의 바닥글이나 저작권 정보를 담는 시맨틱 영역 -->
+    <footer>
+        <p>&copy;Copyright. by Me *^^*</p>
+    </footer>
+    
+</body>
+</html>

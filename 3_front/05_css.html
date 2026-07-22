@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 기본 문법</title>
+    <!-- 내부 스타일 -->
+     <style>
+        /*전체 선택자(*)현재 문서 내의 모든 요소를 선택*/
+        *{
+            margin: 0; /*바깥쪽여백을 0으로 초기화*/
+            padding: 0;/*안쪽 여백을 0으로 초기화*/
+
+
+
+        }
+        p{
+            color:rgb(201, 83, 83);
+            font-size: 18px;
+            line-height: 24px;
+
+
+        }
+        /*태그 선택자: 특정 태그명 전체를 지정*/
+        body {
+            background-color: rgb(179, 230, 113);
+            font-weight: 500;
+        }
+        /*클래스 선택자 : .클래스명(여러요소에 중복적용가능)*/
+        .lunch{
+            font-weight: 900;
+            color: mediumblue;
+        }
+        /*아이디 선택자  #아이디명 html문서에서 단하나만존재*/
+        #feeling{
+            background-color: rgb(209, 186, 231);
+            text-decoration:underline;
+        }
+        div{
+            /*padding: 24px* 상하좌우 /
+             /*padding: 24px 12px*위아래24 좌우 12*/
+            padding: 24px 12px 50px 30px;
+            margin: 24px;
+            border: 1px solid white;/*테두리 두께 모양 색상*/
+        }
+        /*
+        박스 모델의 단축 속성 적용 방식
+        기본적으로 margin padding 상하좌우 시계방향순서로 적용됨
+        값을 1개만 작성할 경우 모든 방향에 같은값으로 적용
+        값을 2개 작성할경우 상하/ 좌우로 적용
+        4개일 경우 상우하좌 순서로 적용
+        */
+            /*
+            관계 선택자
+            자손선택자 특정 요소 내부의  모든 하위 요소 선택(공백으로 구분자
+            특정 요소 선택자 하위 요소 선택자
+            ex)div 태그 내의 모든 p 태그 : div p
+
+            자식 선택자 특정 요소 바로  한단계 아래에 있는 직계 자식만 선택
+            특정요소 선택자 > 직계 자식선택자
+            ex) div 태그 바로 아래에 있는 p태그  div>p
+
+            */
+            /* 클래스 명이 box 인 요소 내부에 있는 모든 p태그를 선택*/
+            .box p {
+                color: rgb(19, 15, 13);
+            }
+            /* .box 요소 하위에 위치하는 직계p태그만 선택*/
+            .box > p {
+                color: darksalmon;
+            }
+
+
+     </style>
+</head>
+<body>
+    <!-- 
+    인라인 스타일 :html 태그 내부에 style 속성으로 스타일을 직접 지정(가중치 1000점)
+     -->
+    <h1 style="color: darkgoldenrod;">Css 기본 문법</h1>
+    <h2>선택자</h2>
+    <p>
+        특정 html 요소를 선택하고자  할 때 사용하는 방식<br>
+        해당 요소를 선택해서 원하는 <b>스타일</b>과 <b>기능</b>을 적용시키수있다
+
+
+    </p>
+    <h3>선택자 종류</h3>
+    <ul>
+        <li>전체 선택자:*</li>
+        <li>태그 선택자 태그명</li>
+        <li>아이디 선택자: #아이디명</li>
+        <li>클래스 선택자: .클래스명</li>
+    </ul>
+    <hr>
+    <p>
+        이 부분 p태그의 스타일이 적용되어있음<br>
+        다음 단어는 클래스 속성으로 강조되어있음<br>
+       <span class="lunch">순대국밥</span>
+    </p>
+    <p id="feeling">
+        오늘 나의 기분은...
+
+    </p>
+    <hr>
+    <h3>관계 선택자 테스트</h3>
+   <div > <!--   부모요소-->
+    <p><!-- 자식요소 -->
+       div 영역
+    </p>
+
+   
+
+    </div>
+  <div class="box"> <!--   부모요소-->
+    <p><!-- 자식요소 -->
+       .box내의 p태그 영역
+    </p>
+    <div>
+        <p>
+            box내의 div 태그 영역
+        </p>
+    </div>
+
+   
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하이퍼링크및멀티미디어</title>
+</head>
+<body>
+    <!--
+    하이퍼링크 태그
+    a (anchor) : 다른웹페이지나 파일로 연결되는 하이퍼링크를 만드는 태그
+    속성
+    href : 이동할 페이지의 url 주소 또는 파일경로 지정
+    target : 링크가 열릴창의 위치를 지정
+    -"_self" 현재창에서 연결(기본값)
+    -"_blank" 새탭에서 연결
+    -->
+    <h3>하이퍼링크 태그</h3>
+    <a href="https://kh-academy.co.kr/"> 교육원 페이지    </a>
+
+    <p>
+<a href="https://kh-academy.co.kr/"  target="_blank"> 교육원 페이지  </a>
+
+    </p>
+
+    <!--
+    이미지 태그
+    속성
+    src 이미지 파일이 위치한 주소 또는 경로지정
+    상대경로 :현재 문서를 기준으로  상대적으로 찾는 경로
+    현재위치 ./
+    상위 ../
+    절대경로 : 최상위 폴더로부터 전체 경로 이미지서버의 주소
+    alt 이미지가 문제가 있을때 표시할 글자 스크린 리더가 읽어주는 설명
+    -->
+    <h3> 이미지 태그</h3>
+    <img src="https://cdn.pixabay.com/photo/2016/11/18/13/48/beach-1834648_1280.jpg"
+    alt=여름
+    width="300">
+    
+<br>
+    <img src="./public/30b3372c-3f25-4b73-bb79-cd5e7214cf0e.jpg"
+    alt="오늘 나의 기분" width="400">
+
+    <!--
+    오디오 비디오 태그
+    audio 음악 파일을 표시하고자하는 태그
+    video 비디오 파일을 표시하고자 할때 사용하는 태그
+
+    속성 
+    src: 재생할 미디어 파일의 주소 또는 경로 지정
+    controls 컨트롤 바 화면에 표시 속성명만 작성
+    poster 비디오 태그 전용 속성으로 썸네일 이미지 지정
+
+    -->
+    <h3>오디오 및 비디오 태그</h3>
+    <audio src="./public/안개_흐르는_숲.mp3" controls> 오디오 재생을 지원하지 않습니다
+
+    </audio>
+    <video src="./public/안개_흐르는_숲.mp4" width="300" controls>
+
+
+    </video>
+
+<hr>
+<!--
+외부 프레임 태그
+iframe 현재 페이지 내부의 특정 영역에 다른 웹페이지를 삽입하는 태그
+
+
+
+-->
+<h3> 외부 프레임 삽입 태그</h3>
+
+<h4> 교육원 홈페이지</h4>
+<iframe src="https://kh-academy.co.kr/" 
+    width="1200" height="600">
+    
+   
+</iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XZqGSLx6Oes?si=UqTMHgz9NMQrv2RK&amp;start=12" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    
+</body>
+</html>

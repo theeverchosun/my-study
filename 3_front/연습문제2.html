@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 종합 실습 (문제)</title>
+
+    <style>
+        /* 기본 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            height: 50px;
+            padding: 0 25px;
+            background-color: #1e293b;
+            color: #f5f6fa;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+
+
+        }
+        .menu{
+            display: flex;
+            gap: 20px;
+        }
+        .menu > li{
+            cursor: pointer; 
+        }
+        .menu >li:hover {
+            color: rgb(219, 241, 14);
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: #e2e8f0;
+            background-color: #1e3a8a;
+
+        }
+
+        body {
+            background-color: #0f172a; 
+            color: #e2e8f0;
+            padding-top: 50px;
+        }
+        .section-title {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            color:#38bdf8;
+            font-size: 24px;
+
+
+        }
+        .profile-card {
+            position: relative;
+            width: 300px;
+            background-color: #1e293b;
+            margin: 0 auto;
+            padding: 24px;
+            border: 1px solid #334155;
+            border-radius: 12px;
+        }
+        .badge {
+            position:absolute;
+            top: 12px;
+            right: 12px;
+
+            background-color: #0ea5e9;
+            color: #e2e8f0;
+            font-weight: bold;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 4px;
+
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            padding: 20px;
+
+        }
+        .card {
+            width: 250px;
+            padding: 24px;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+        }
+        .card > h3 {
+            color:#38bdf8;
+            margin-bottom: 8px;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            margin-left: 0px;
+            margin-right: 0px;
+            color: #38bdf8;
+            font-size: 24px;
+        }
+
+
+        ul, ol {
+            list-style: none;
+        }
+        .relation {
+            max-width: 400px;
+            margin: 0 auto 16px auto;
+            padding: 16px;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            text-align: center;
+
+        }
+        .relation p {
+            color: #c084fc;
+
+        }
+        .relation > span{
+            color: #fb923c;
+        }
+        #special {
+            max-width: 400px;
+            margin: 0 auto 0 auto;
+            padding: 12px;
+            text-align: center;
+            background-color: #fb923c;
+            border-left: 4px solid #38bdf8;
+        }
+    </style>
+</head>
+
+<body>
+
+<!--
+    ==================================================
+                [ HTML/CSS 종합 실습 ] 
+    ==================================================
+
+        목표: 학습한 CSS를 활용해서 현재 문서에 
+              내부 스타일 방식으로 스타일 적용을 완성하세요.
+        
+        힌트: 각 요소별 태그명, id, class 속성 등을
+              활용하여 선택한 후 디자인을 적용해보세요.
+    ==================================================
+-->    
+
+    <!-- ==================================================
+            [문제 1] 상단 메뉴바 완성하기
+
+            - 페이지 상단 고정
+            - 세로 길이(높이): 50px
+            - 안쪽 여백: 상하 0 좌우 25px
+            - 자식 요소 배치: 로고는 좌측으로, 메뉴는 우측으로 배치
+            - 글자 색상: #f5f6fa
+            - 배경 색상: #1e293b
+         ================================================== -->
+    <nav class="navbar">
+        <div class="logo">MyPortfolio</div>
+        <ul class="menu">
+            <li>홈</li>
+            <li>소개</li>
+            <li>작업물</li>
+            <li>연락처</li>
+        </ul>
+    </nav>
+
+    <!-- ==================================================
+            [문제 2] 배너 완성하기
+
+            - 텍스트 정렬: 가운데 정렬
+            - 글자 색상: 흰색(white)
+            - 배경 색상: #1e3a8a
+            - 안쪽 여백: 상하 60px 좌우 20px
+         ================================================== -->
+    <header class="hero">
+        <h1>안녕하세요, CSS를 배우는 중입니다</h1>
+        <p>이전 001 연습 문제의 일부 내용을 가져와 스타일을 적용해보는 페이지입니다</p>
+    </header>
+
+    <!-- ==================================================
+            [문제 3] 프로필 카드 완성하기
+
+            - 부제목 디자인
+              - 텍스트 정렬: 가운데 정렬
+              - 바깥쪽 여백: 상 40px 하 20px 좌우 0
+              - 글자 색상: #38bdf8
+              - 글자 크기: 24px
+
+            - 프로필 카드 디자인
+              - 가로 길이(너비): 300px
+              - 배경 색상: #1e293b
+              - 바깥쪽 여백: 상하 0 좌우 auto
+              - 안쪽 여백: 24px
+              - 테두리: 1px solid #334155
+              - 테두리 반경: 12px;
+
+            - 뱃지 디자인
+              - 부모 요소(profile-card) 기준 위에서 12px, 오른쪽에서 12px 떨어진 위치에 고정
+              - 배경 색상: #0ea5e9
+              - 글자 색상: white
+              - 글자 두께: bold
+              - 글자 크기: 11px
+              - 안쪽 여백: 상하 4px 좌우 8px
+              - 테두리 반경: 4px
+         ================================================== -->    
+    <section>
+        <h2 class="section-title">프로필</h2>
+        <div class="profile-card">
+            <span class="badge">NEW</span>
+            <h3>임수진</h3>
+            <p>프론트엔드를 공부하고 있습니다. <br> relative 부모 안에서 NEW 뱃지가 absolute로 배치됩니다.</p>
+        </div>
+    </section>
+
+    <!-- ==================================================
+            [문제 4] 카드 목록 완성하기
+
+            - 카드 목록 디자인
+              - flexbox 로 표현
+              - 자식 요소의 너비를 유지하며, 자동 줄바꿈 처리
+              - 주 축을 기준으로 가운데 정렬
+              - 요소 간 간격: 24px
+              - 안쪽 여백: 20px
+
+            - 개별 카드 디자인
+              - 가로 길이: 250px
+              - 안쪽 여백: 24px
+              - 배경 색상: #1e293b
+              - 테두리: 1px solid #334155
+              - 테두리 반경: 12px
+
+              - 소제목 글꼴 색상: #38bdf8
+              - 소제목 바깥쪽 하단 여백: 8px
+         ================================================== -->    
+    <section>
+        <h2 class="section-title">기술 스택</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>HTML</h3>
+                <p>문서의 구조를 만드는 마크업 언어입니다.</p>
+            </div>
+            <div class="card">
+                <h3>CSS</h3>
+                <p>요소를 꾸미고 배치하는 스타일 언어입니다.</p>
+            </div>
+            <div class="card">
+                <h3>JavaScript</h3>
+                <p>동작과 상호작용을 담당합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================================================     
+            [문제 5] 선택자 연습 완성하기
+
+            - 부모 요소(relation) 디자인
+              - 최대 가로 너비: 400px
+              - 바깥쪽 여백: 상 0 하 16px 좌우 auto
+              - 안쪽 여백: 16px
+              - 배경 색상: #1e293b
+              - 테두리: 1px solid #334155
+              - 테두리 반경: 8px
+              - 텍스트 정렬: 가운데 정렬
+            - special 요소 디자인
+              - 최대 가로 너비: 400px
+              - 바깥쪽 여백: 상하 0 좌우 auto
+              - 안쪽 여백: 12px
+              - 텍스트 정렬: 가운데 정렬              
+         ================================================== -->         
+    <section>
+        <h2 class="section-title">선택자 연습</h2>
+        <div class="relation">
+            <p>후손 선택자를 사용하여<br> 이 요소를 보라색(#c084fc)으로 표현하세요</p>
+            <span>자식 선택자를 사용하여 <br> 이 요소를 주황색(#fb923c)으로 표현하세요</span>
+        </div>
+        <p id="special">
+            이 부분은 주황색 배경으로 변경하고 <br>
+            왼쪽에 강조선을 표현하세요.
+        </p>
+    </section>
+</body>
+</html>

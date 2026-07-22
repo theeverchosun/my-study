@@ -1,0 +1,19 @@
+/* 공통 리셋 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+ul, li { list-style: none; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+body { font-family: "Noto Sans KR", sans-serif; color: #2b3440; line-height: 1.6; }
+
+/* 폭 가두기 + 가운데 정렬 */
+.wrapper { width: 100%; max-width: 960px; margin: 0 auto; padding: 24px; }
+
+/* 본문 2분할 (7 : 3) */
+.main { display: flex; gap: 24px; align-items: flex-start; }
+.content { flex: 7; }
+.side    { flex: 3; }
+
+/* 좁은 화면: 한 줄로 쌓기 */
+@media (max-width: 640px) {
+  .main { flex-direction: column; }
+}

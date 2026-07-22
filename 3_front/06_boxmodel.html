@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boxmodel실습</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: darkgrey;
+            height: 3000px;/*스크롤 표시를 위해 강제 설정*/
+            padding-top: 60px;
+
+        }
+        /*
+        헤더태그를 고정 - position: fixed
+        */
+        header{
+                position: fixed;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 50px;
+                line-height: 50px;
+                background-color: blueviolet;
+                color:aliceblue;
+                text-align: center;
+                font-weight: 600;
+        }
+            .container {
+                padding: 20px; /*안쪽여백 상하 좌우 20*/
+
+            }
+            h2 {
+                margin-bottom: 15px; /*바깥쪽 하단 여백 15*/
+                padding-left: 10px; /*안쪽 좌측 여백 10*/
+
+                border-left: 4px solid #a30a0a; /* 테두리 좌측 표시*/
+                font-size: 1.4rem;/*글자크기 최상위 요소기준 1.4배*/
+
+
+
+            }
+            .container>p {
+                /*바깥쪽 하단 여백을 15px*/
+                /*글자 색상 #444*/
+                /*글자 크기 최상위 요소 0.95*/
+                margin-bottom: 15px;
+                color:#206e31;
+                font-size: 0.95rem;
+            }
+
+            /* 박스모델     : content + padding + border + margin
+            크기 계산한는 방식 :box-sizing
+            content-box (기본값) :width 지정하면 content 크기에 반영
+            요소가 차지하는 공간은 지정한 width(content ) + padding => 300 + padding +border
+            + border-box : width 지정하면 content + padding + border크기에 반영
+            */
+            .box {
+                width: 300px;
+                height: 100px;
+
+                padding: 20px;
+                border: 2px solid #8cce9b;
+
+                background-color: #b8cf64;
+                font-weight: bold;
+                font-size: 0.85rem;
+            }
+            .content {
+                box-sizing: content-box;
+
+            }
+            .border {
+                box-sizing: border-box;
+            }
+            .box-wrap {
+                display: flex;
+                gap: 20px;
+                margin-bottom: 20px;
+            }
+            .span1 {
+                /*
+                display  요소흐름과 크기를 가질수있은 성질 변경
+                inline-block inline 처럼 나란히 배치되면서 block처럼 가로세로 크기를 가질수있음
+                */
+                display:inline-block;
+                width: 120px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                background-color: #ffe3e3;
+                border: 1px solid #ff8787;
+                border-radius: 4px;
+            }
+            /*요소를 화면에서 표시하지 않으면서 영역도 차지않게하는 성질 display:none;*/
+            .hidden {
+                display: none;
+
+            }
+            /*
+            position relavtive absolute
+            relavtive 부모 자식 요소 absolutef를 가진 기준 점 좌표역할
+            absolute 자식  : 일반적인 흐름을  가장 가까운 relative 부모 모서리를기준으로함
+            */
+            .card {
+                position: relative;
+
+                width: 350px;
+                padding: 25px;
+                border: 1px solid #774e4e;
+                border-radius: 8px;
+                background-color: #5fa16d;
+                box-shadow: 0 2px 8px #ff8787 rgba(0, 0, 0, 0.5);
+
+
+            }
+            .badge   {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+
+                background-color: aliceblue;
+                color: #774e4e;
+                font-size: 11px;
+                border-radius: 4px;
+                }
+
+    </style>
+
+
+</head>
+<body>
+    <!-- 상단 고정 영역 -->
+     <header>
+        고정되는 상단바
+     </header>
+     <!-- box sizing -->
+      <div class="container">
+        <h2>
+            css 박스모델
+        </h2>
+        <p>
+            아래 두 박스는 모두 가로(width) 300px / 세로(height) 100px로 부여했음 <br>
+        </p>
+        <div class="box-wrap">
+        <div class="box content">
+            content box <br>
+            실제 가로폭 = width(300px) + padding(40px) + border(4px) <br>
+            실제 세로폭  height(100px) + padding(40px )+ border (4px)
+
+        </div>
+        <div class="box border">
+            border box <br>
+             실제 가로폭 = width(300px) <br>
+            실제 세로폭  height(100px) 
+        </div>
+
+
+
+    </div>
+    <div>
+    <h2> display 속성 제어</h2>
+    <p>
+        기본적으로 inline태그는 가로세로 크기를 변경할수없음<br>
+        해당 태그는 display:iniline-block을 적용하면 크기를 조절할수있음
+
+    </p>
+    <span class="span1">박스 A</span>
+    <span class="span1">박스 B</span>
+    <span class="span1">박스 C</span>
+    <p class="hidden">
+        사라질 부분(이부분은 화면에 표시되지않으며 공간도 차지하지 않음)
+    </p>
+    <h2>position 속성</h2>
+    <P>
+        부모요소에 relative 를 주고 자식 요소에 aboslute를 주어 부모내부에 절대 좌표를 잡히게하는 방식
+    </P>
+    <div class="card">
+        <span class="badge">new</span>
+        <p>이 카드는 </p>
+    </div>
+</div>
+
+</body>
+</html>
