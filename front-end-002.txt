@@ -1,0 +1,21 @@
+1. 호이스팅 (Hoisting)
+호이스팅은 코드가 실행되기 전, 자바스크립트 엔진이 선언부(변수, 함수 선언)를 코드의 최상단으로 끌어올리는 것처럼 동작하는 현상을 말합니다.
+var: 선언과 함께 undefined로 초기화됩니다. 선언 전에 접근해도 에러가 나지 않고 undefined를 반환합니다.
+
+let, const: 선언 자체는 호이스팅되지만, 초기화는 해당 코드 줄에 도달했을 때 이루어집니다. 선언 전까지 접근할 수 없는데, 이 구간을 TDZ (Temporal Dead Zone, 일시적 자사 구역)라고 부르며 접근 시 ReferenceError가 발생합니다.
+
+JavaScript
+// [var 키워드]
+console.log(a); // undefined (에러가 나지 않음!)
+var a = 10;
+
+// [let / const 키워드]
+console.log(b); // ReferenceError: Cannot access 'b' before initialization
+let b = 20;
+
+2. 클로저 (Closure)
+클로저는 함수와 그 함수가 선언된 어휘적 환경(Lexical Environment)의 조합입니다.
+쉽게 말해, "외부 함수의 실행이 끝난 후에도, 내부 함수가 외부 함수의 변수를 기억하고 접근할 수 있는 상태"를 의미합니다.
+
+ 클로저가 발생하는 동작 원리
+자바스크립트의 함수는 자신이 생성될 때의 스코프(환경)를 기억합니다. 외부 함수가 내부 함수를 반환하고 수명을 다하더라도, 내부 함수는 외부 함수의 변수에 계속 접근할 수 있습니다.
