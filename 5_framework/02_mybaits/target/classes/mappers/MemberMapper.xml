@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  
+  <!--
+	namespace:해당 XML 파일이 어떤 Mapper 인터페이스와 연결할지 지정
+  -->
+
+<mapper namespace="com.kh.myabaits.model.mapper.MemberMapper">
+<select id="findAll" resultType="MemberDTO">
+Select ID, NAME, EMAIL, AGE
+FROM MEMBER
+ORDER BY ID
+
+</select>
+
+<insert id="insert" parameterType="MemberDTO">
+INSERT INTO MEMBER (ID, NAME, EMAIL, AGE)
+VALUES (SEQ_MEMBER_ID.NEXTVAL, #{name}, #{email}, #{age})
+</insert>
+
+</mapper>

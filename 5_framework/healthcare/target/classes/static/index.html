@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헬스장 회원 관리 시스템</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 30px; background-color: #f4f7f6; color: #333; }
+        h1, h2 { color: #2c3e50; }
+        .container { display: flex; gap: 20px; flex-wrap: wrap; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); flex: 1; min-width: 300px; }
+        form label { display: block; margin-top: 10px; font-weight: bold; }
+        form input, form select { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        button { margin-top: 15px; width: 100%; padding: 10px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .badge-warning { background-color: #e74c3c; color: white; padding: 3px 6px; border-radius: 4px; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <h1>🏋️ 헬스장 회원 관리 시스템</h1>
+    <hr>
+
+    <div class="container">
+        <!-- 1. 회원 등록 폼 -->
+        <div class="card">
+            <h2>➕ 신규 회원 등록</h2>
+            <form action="/members/add" method="post">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" placeholder="홍길동" required>
+
+                <label for="gender">성별</label>
+                <select id="gender" name="gender" required>
+                    <option value="남">남성</option>
+                    <option value="여">여성</option>
+                </select>
+
+                <label for="age">나이</label>
+                <input type="number" id="age" name="age" min="1" placeholder="25" required>
+
+                <label for="height">키 (cm)</label>
+                <input type="number" step="0.1" id="height" name="height" placeholder="175.5" required>
+
+                <label for="weight">몸무게 (kg)</label>
+                <input type="number" step="0.1" id="weight" name="weight" placeholder="70.2" required>
+
+                <button type="submit">회원 등록하기</button>
+            </form>
+        </div>
+
+        <!-- 2. 회원 목록 보기 -->
+        <div class="card" style="flex: 2;">
+            <h2>📋 전체 회원 목록</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>이름</th>
+                        <th>성별</th>
+                        <th>나이</th>
+                        <th>키</th>
+                        <th>몸무게</th>
+                        <th>BMI</th>
+                        <th>관리대상</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Thymeleaf 반복문 (Spring Controller에서 전달받은 members) -->
+                    <tr th:each="member : ${members}">
+                        <td th:text="${member.memberId}">1</td>
+                        <td th:text="${member.name}">홍길동</td>
+                        <td th:text="${member.gender}">남</td>
+                        <td th:text="${member.age} + '세'">25세</td>
+                        <td th:text="${#numbers.formatDecimal(member.height * 100, 1, 1)} + 'cm'">175.0cm</td>
+                        <td th:text="${#numbers.formatDecimal(member.weight, 1, 1)} + 'kg'">70.0kg</td>
+                        <td th:text="${#numbers.formatDecimal(member.calculateBMI(), 1, 2)}">22.86</td>
+                        <td>
+                            <span th:if="${member.requiresSpecialCare}" class="badge-warning">주의</span>
+                            <span th:unless="${member.requiresSpecialCare}">정상</span>
+                        </td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(members)}">
+                        <td colspan="8">등록된 회원이 없습니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
